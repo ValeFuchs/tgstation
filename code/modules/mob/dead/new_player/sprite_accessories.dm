@@ -1448,6 +1448,13 @@
 	name = "Round"
 	icon_state = "round"
 
+/datum/sprite_accessory/fox_tails
+	icon = "icons/mob/mutant_bodyparts.dmi"
+
+/datum/sprite_accessory/fox_tails/fox
+	name = "Fox"
+	icon_state = "fox"
+
 /datum/sprite_accessory/moth_wings
 	icon = 'icons/mob/wings.dmi'
 	color_src = null

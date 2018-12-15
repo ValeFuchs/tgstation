@@ -1,14 +1,20 @@
-//Subtype of human
+//Catpeople
 /datum/species/human/felinid
 	name = "Felinid"
 	id = "felinid"
-	limbs_id = "human"
-
+	default_color = "454545"
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS)
+	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	mutant_bodyparts = list("ears", "tail_human")
-	default_features = list("mcolor" = "FFF", "tail_human" = "Cat", "ears" = "Cat", "wings" = "None")
-
+	default_features = list("mcolor" = "0F0", "tail_human" = "Cat", "ears" = "Cat", "wings" = "None")
 	mutantears = /obj/item/organ/ears/cat
 	mutanttail = /obj/item/organ/tail/cat
+	attack_verb = "slash"
+	attack_sound = 'sound/weapons/slash.ogg'
+	miss_sound = 'sound/weapons/slashmiss.ogg'
+	skinned_type = /obj/item/stack/sheet/animalhide/human
+	disliked_food = GROSS | FRUIT | VEGETABLES
+	liked_food = DAIRY | MEAT
 
 /datum/species/human/felinid/qualifies_for_rank(rank, list/features)
 	return TRUE
