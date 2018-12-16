@@ -31,7 +31,7 @@
 	if(istype(H))
 		H.dna.features["tail_human"] = "None"
 		H.dna.species.mutant_bodyparts -= "tail_human"
-		color = H.hair_color
+		color = "#" + H.dna.features["mcolor"]
 		H.update_body()
 
 /obj/item/organ/tail/lizard
@@ -62,4 +62,28 @@
 		color = "#" + H.dna.features["mcolor"]
 		tail_type = H.dna.features["tail_lizard"]
 		spines = H.dna.features["spines"]
+		H.update_body()
+
+/obj/item/organ/tail/fox
+	name = "fox tail"
+	desc = "A severed fox tail. It's luxuriously fluffy."
+	icon_state = "severedfoxtail"
+	color = "#FF4D00"
+	tail_type = "Fox"
+
+/obj/item/organ/tail/fox/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(H))
+		// Checks here are necessary so it wouldn't overwrite the tail of a fox it spawned in
+		if(!("tail_fox" in H.dna.species.mutant_bodyparts))
+			H.dna.features["tail_fox"] = tail_type
+			H.dna.species.mutant_bodyparts |= "tail_fox"
+		H.update_body()
+
+/obj/item/organ/tail/fox/Remove(mob/living/carbon/human/H,  special = 0)
+	..()
+	if(istype(H))
+		H.dna.species.mutant_bodyparts -= "tail_fox"
+		color = "#" + H.dna.features["mcolor"]
+		tail_type = H.dna.features["tail_fox"]
 		H.update_body()

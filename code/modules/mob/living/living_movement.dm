@@ -25,9 +25,3 @@
 		add_movespeed_modifier(MOVESPEED_ID_LIVING_TURF_SPEEDMOD, TRUE, 100, override = TRUE, multiplicative_slowdown = T.slowdown)
 	else
 		remove_movespeed_modifier(MOVESPEED_ID_LIVING_TURF_SPEEDMOD)
-
-/mob/living/can_zFall(turf/T, levels)
-	return !(movement_type & FLYING)
-
-/mob/living/canZMove(dir, turf/target)
-	return can_zTravel(target, dir) && (movement_type & FLYING)

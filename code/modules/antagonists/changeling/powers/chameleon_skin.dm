@@ -11,15 +11,16 @@
 	if(!istype(H)) // req_human could be done in can_sting stuff.
 		return
 	..()
-	if(H.dna.get_mutation(CHAMELEON))
-		H.dna.remove_mutation(CHAMELEON)
-
-
+	var/datum/mutation/human/HM = GLOB.mutations_list[CHAMELEON]
+	if(HM in H.dna.mutations)
+		HM.force_lose(H)
 	else
-		H.dna.add_mutation(CHAMELEON)
+		HM.force_give(H)
 	return TRUE
 
 /obj/effect/proc_holder/changeling/chameleon_skin/on_refund(mob/user)
 	if(user.has_dna())
 		var/mob/living/carbon/C = user
-		C.dna.remove_mutation(CHAMELEON)
+		var/datum/mutation/human/HM = GLOB.mutations_list[CHAMELEON]
+		if(HM in C.dna.mutations)
+			HM.force_lose(C)

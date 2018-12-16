@@ -174,15 +174,15 @@
 
 /obj/effect/decal/cleanable/glitter/pink
 	name = "pink glitter"
-	icon_state = "plasma"
+	icon_state = "plasma_old"
 
 /obj/effect/decal/cleanable/glitter/white
 	name = "white glitter"
-	icon_state = "nitrous_oxide"
+	icon_state = "nitrous_oxide_old"
 
 /obj/effect/decal/cleanable/glitter/blue
 	name = "blue glitter"
-	icon_state = "freon"
+	icon_state = "freon_old"
 
 /obj/effect/decal/cleanable/plasma
 	name = "stabilized plasma"

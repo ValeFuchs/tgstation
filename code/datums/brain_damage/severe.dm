@@ -143,7 +143,7 @@
 /datum/brain_trauma/severe/monophobia
 	name = "Monophobia"
 	desc = "Patient feels sick and distressed when not around other people, leading to potentially lethal levels of stress."
-	scan_desc = "monophobia"
+	scan_desc = "severe monophobia"
 	gain_text = ""
 	lose_text = "<span class='notice'>You feel like you could be safe on your own.</span>"
 	var/stress = 0

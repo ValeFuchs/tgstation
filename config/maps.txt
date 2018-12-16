@@ -31,6 +31,3 @@ endmap
 
 map runtimestation
 endmap
-
-map multiz_debug
-endmap

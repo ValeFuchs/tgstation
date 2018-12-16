@@ -63,12 +63,6 @@
 	owner = null
 	qdel(src)
 
-/datum/status_effect/proc/refresh()
-	var/original_duration = initial(duration)
-	if(original_duration == -1)
-		return
-	duration = world.time + original_duration
-
 //clickdelay/nextmove modifiers!
 /datum/status_effect/proc/nextmove_modifier()
 	return 1
@@ -97,9 +91,6 @@
 		if(S.id == initial(S1.id) && S.status_type)
 			if(S.status_type == STATUS_EFFECT_REPLACE)
 				S.be_replaced()
-			else if(S.status_type == STATUS_EFFECT_REFRESH)
-				S.refresh()
-				return
 			else
 				return
 	var/list/arguments = args.Copy()

@@ -65,7 +65,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/skin_tone = "caucasian1"		//Skin color
 	var/eye_color = "000"				//Eye color
 	var/datum/species/pref_species = new /datum/species/human()	//Mutant race
-	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_human" = "None", "snout" = "Round", "horns" = "None", "ears" = "None", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain")
+	var/list/features = list("mcolor" = "FFF", "ethcolor" = "9c3030", "tail_lizard" = "Smooth", "tail_fox" = "Fox", "tail_human" = "Cat", "snout" = "Round", "horns" = "None", "ears" = "Cat", "wings" = "None", "frills" = "None", "spines" = "None", "body_markings" = "None", "legs" = "Normal Legs", "moth_wings" = "Plain")
 
 	var/list/custom_names = list()
 	var/preferred_ai_core_display = "Blue"
@@ -404,6 +404,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				dat += "<h3>Moth wings</h3>"
 
 				dat += "<a href='?_src_=prefs;preference=moth_wings;task=input'>[features["moth_wings"]]</a><BR>"
+
+				mutant_category++
+				if(mutant_category >= MAX_MUTANT_ROWS)
+					dat += "</td>"
+					mutant_category = 0
+
+			if("tail_fox" in pref_species.default_features)
+				if(!mutant_category)
+					dat += APPEARANCE_CATEGORY_COLUMN
+
+				dat += "<h3>Tail</h3>"
+
+				dat += "<a href='?_src_=prefs;preference=tail_fox;task=input'>[features["tail_fox"]]</a><BR>"
 
 				mutant_category++
 				if(mutant_category >= MAX_MUTANT_ROWS)
@@ -1237,7 +1250,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							features["mcolor"] = sanitize_hexcolor(new_mutantcolor)
 						else
 							to_chat(user, "<span class='danger'>Invalid color. Your color is not bright enough.</span>")
-				
+
 				if("color_ethereal")
 					var/new_etherealcolor = input(user, "Choose your ethereal color", "Character Preference") as null|anything in GLOB.color_list_ethereal
 					if(new_etherealcolor)
@@ -1249,6 +1262,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
 					if(new_tail)
 						features["tail_lizard"] = new_tail
+
+				if("tail_fox")
+					var/new_tail
+					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.fox_tails_list
+					if(new_tail)
+						features["tail_fox"] = new_tail
 
 				if("tail_human")
 					var/new_tail
@@ -1568,6 +1587,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	if("tail_lizard" in pref_species.default_features)
 		character.dna.species.mutant_bodyparts |= "tail_lizard"
+
+	if("tail_fox" in pref_species.default_features)
+		character.dna.species.mutant_bodyparts |= "tail_fox"
 
 	if(icon_updates)
 		character.update_body()

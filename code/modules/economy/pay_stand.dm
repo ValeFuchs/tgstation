@@ -61,8 +61,7 @@
 		to_chat(user, "What is this, the 1800s? We only take card here.")
 		return
 	if(istype(W, /obj/item/assembly/signaler))
-		var/obj/item/assembly/signaler/S = W
-		if(S.secured)
+		if(signaler.secured)
 			to_chat(user, "<span class='warning'>The signaler needs to be in attachable mode to add it to the paystand!</span>")
 			return
 		if(!my_card)
@@ -74,8 +73,8 @@
 				to_chat(user, "<span class='warning'>ERROR: Invalid amount designated.</span>")
 				return
 			if(cash_limit)
-				S.forceMove(src)
-				signaler = S
+				W.forceMove(src)
+				signaler = W
 				signaler_threshold = cash_limit
 				to_chat(user, "You attach the signaler to the paystand.")
 				desc += " A signaler appears to be attached to the scanner."

@@ -3,10 +3,11 @@
 	name = "Felinid"
 	id = "felinid"
 	default_color = "454545"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS)
+	species_traits = list(HAIR,MUTCOLORS,EYECOLOR,LIPS)
 	inherent_biotypes = list(MOB_ORGANIC, MOB_HUMANOID)
 	mutant_bodyparts = list("ears", "tail_human")
 	default_features = list("mcolor" = "0F0", "tail_human" = "Cat", "ears" = "Cat", "wings" = "None")
+	use_skintones = 0
 	mutantears = /obj/item/organ/ears/cat
 	mutanttail = /obj/item/organ/tail/cat
 	attack_verb = "slash"

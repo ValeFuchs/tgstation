@@ -55,7 +55,7 @@
 	passive_message = "<span class='notice'>You miss the feeling of starlight on your skin.</span>"
 	var/nearspace_penalty = 0.3
 	threshold_desc = "<b>Stage Speed 6:</b> Increases healing speed.<br>\
-					  <b>Transmission 6:</b> Removes penalty for only being close to space."
+					  <b>Transmission -10:</b> Removes penalty for only being close to space."
 
 /datum/symptom/heal/starlight/Start(datum/disease/advance/A)
 	if(!..())
@@ -417,7 +417,7 @@
 	symptom_delay_max = 1
 	passive_message = "<span class='notice'>Your skin glows faintly for a moment.</span>"
 	var/cellular_damage = FALSE
-	threshold_desc = "<b>Transmission 6:</b> Additionally heals cellular damage.<br>\
+	threshold_desc = "<b>Transmission -10:</b> Additionally heals cellular damage.<br>\
 					  <b>Resistance 7:</b> Increases healing speed."
 
 /datum/symptom/heal/radiation/Start(datum/disease/advance/A)

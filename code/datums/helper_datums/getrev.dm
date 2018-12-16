@@ -76,8 +76,7 @@
 	else if(!pc)
 		msg += "No commit information"
 	if(world.TgsAvailable())
-		var/datum/tgs_version/version = world.TgsVersion()
-		msg += "Server tools version: [version.raw_parameter]"
+		msg += "Server tools version: [world.TgsVersion()]"
 
 	// Game mode odds
 	msg += "<br><b>Current Informational Settings:</b>"

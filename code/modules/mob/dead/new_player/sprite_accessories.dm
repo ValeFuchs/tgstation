@@ -1265,12 +1265,16 @@
 /datum/sprite_accessory/tails/human/cat
 	name = "Cat"
 	icon_state = "cat"
-	color_src = HAIR
+	//color_src = HAIR
 
 /datum/sprite_accessory/tails_animated/human/cat
 	name = "Cat"
 	icon_state = "cat"
-	color_src = HAIR
+	//color_src = HAIR
+
+/datum/sprite_accessory/tails/fox/fox				//Fox tails
+	name = "Fox"
+	icon_state = "fox"
 
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
@@ -1447,13 +1451,6 @@
 /datum/sprite_accessory/caps/round
 	name = "Round"
 	icon_state = "round"
-
-/datum/sprite_accessory/fox_tails
-	icon = "icons/mob/mutant_bodyparts.dmi"
-
-/datum/sprite_accessory/fox_tails/fox
-	name = "Fox"
-	icon_state = "fox"
 
 /datum/sprite_accessory/moth_wings
 	icon = 'icons/mob/wings.dmi'

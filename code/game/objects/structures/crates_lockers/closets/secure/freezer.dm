@@ -9,7 +9,7 @@
 		..()
 
 /obj/structure/closet/secure_closet/freezer/kitchen
-	name = "kitchen cabinet"
+	name = "kitchen Cabinet"
 	req_access = list(ACCESS_KITCHEN)
 
 /obj/structure/closet/secure_closet/freezer/kitchen/PopulateContents()
@@ -38,16 +38,13 @@
 
 /obj/structure/closet/secure_closet/freezer/meat
 	name = "meat fridge"
-	req_access = list(ACCESS_KITCHEN)
 
 /obj/structure/closet/secure_closet/freezer/meat/PopulateContents()
 	..()
 	for(var/i = 0, i < 4, i++)
 		new /obj/item/reagent_containers/food/snacks/meat/slab/monkey(src)
-
 /obj/structure/closet/secure_closet/freezer/fridge
 	name = "refrigerator"
-	req_access = list(ACCESS_KITCHEN)
 
 /obj/structure/closet/secure_closet/freezer/fridge/PopulateContents()
 	..()
