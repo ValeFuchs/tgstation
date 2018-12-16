@@ -1,5 +1,5 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>ValeFuchs here, testing our fresh new fork of TG Code</h1>
+<h1>Welcome to Furry Pound Station!</h1>
 
-<i>Oh god I hope I didn't break literally everything.</i>
+<i>TGStation, but with animal people!</i>
