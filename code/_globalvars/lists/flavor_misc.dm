@@ -29,6 +29,7 @@ GLOBAL_LIST_EMPTY(animated_spines_list)
 
 	//Fox Tails
 GLOBAL_LIST_EMPTY(fox_tails_list)
+GLOBAL_LIST_EMPTY(blaf_tails_list)
 
 	//Mutant Human bits
 GLOBAL_LIST_EMPTY(tails_list_human)

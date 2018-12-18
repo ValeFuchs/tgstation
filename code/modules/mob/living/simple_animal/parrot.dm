@@ -91,7 +91,7 @@
 									/obj/machinery/computer,			/obj/machinery/clonepod, \
 									/obj/machinery/dna_scannernew,		/obj/machinery/telecomms, \
 									/obj/machinery/nuclearbomb,			/obj/machinery/particle_accelerator, \
-									/obj/machinery/recharge_station,	/obj/machinery/smartfridge, \
+									/obj/machinery/recharge_station,	/obj/machinery/smartfridge/drinks, \
 									/obj/machinery/suit_storage_unit)
 
 	//Parrots are kleptomaniacs. This variable ... stores the item a parrot is holding.
@@ -877,12 +877,12 @@
 	var/longest_deathstreak = 0
 
 /mob/living/simple_animal/parrot/Poly/Initialize()
-	ears = new /obj/item/radio/headset/headset_eng(src)
-	available_channels = list(":e")
+	ears = new /obj/item/radio/headset/heads/captain(src)
+	available_channels = list(":e", ":c", ":m", ":n", ":s", ":u")
 	Read_Memory()
 	if(rounds_survived == longest_survival)
 		speak += pick("...[longest_survival].", "The things I've seen!", "I have lived many lives!", "What are you before me?")
-		desc += " Old as sin, and just as loud. Claimed to be [rounds_survived]."
+		desc += " Old as sin, and just as loud. Claimed to be [rounds_survived] years old."
 		speak_chance = 20 //His hubris has made him more annoying/easier to justify killing
 		add_atom_colour("#EEEE22", FIXED_COLOUR_PRIORITY)
 	else if(rounds_survived == longest_deathstreak)

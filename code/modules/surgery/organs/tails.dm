@@ -87,3 +87,27 @@
 		color = "#" + H.dna.features["mcolor"]
 		tail_type = H.dna.features["tail_fox"]
 		H.update_body()
+
+/obj/item/organ/tail/blaf
+	name = "Shahrubah tail"
+	desc = "A severed shahrubah tail. This should knock them down a peg!"
+	icon_state = "severedblaftail"
+	color = "#FFFFFF"
+	tail_type = "Shahrubah"
+
+/obj/item/organ/tail/blaf/Insert(mob/living/carbon/human/H, special = 0, drop_if_replaced = TRUE)
+	..()
+	if(istype(H))
+		// Checks here are necessary so it wouldn't overwrite the tail of a fox it spawned in
+		if(!("tail_blaf" in H.dna.species.mutant_bodyparts))
+			H.dna.features["tail_blaf"] = tail_type
+			H.dna.species.mutant_bodyparts |= "tail_blaf"
+		H.update_body()
+
+/obj/item/organ/tail/fox/Remove(mob/living/carbon/human/H,  special = 0)
+	..()
+	if(istype(H))
+		H.dna.species.mutant_bodyparts -= "tail_blaf"
+		color = "#FFFFFF"
+		tail_type = H.dna.features["tail_blaf"]
+		H.update_body()

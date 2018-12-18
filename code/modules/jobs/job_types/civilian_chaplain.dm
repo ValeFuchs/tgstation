@@ -65,6 +65,8 @@ Chaplain
 			B.name = "The Book of Lorgar"
 		if("imperium")
 			B.name = "Uplifting Primer"
+		if("floofithos")
+			B.name = "The Scrolls of Fredegar"
 		if("toolboxia")
 			B.name = "Toolbox Manifesto"
 		if("homosexuality")

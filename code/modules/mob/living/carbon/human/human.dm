@@ -1033,3 +1033,6 @@
 
 /mob/living/carbon/human/species/fox
 	race = /datum/species/fox
+
+/mob/living/carbon/human/species/blaf
+	race = /datum/species/blaf

@@ -578,6 +578,11 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
 			bodyparts_to_add -= "tail_fox"
 
+	if("tail_blaf" in mutant_bodyparts)
+		if(H.wear_suit && (H.wear_suit.flags_inv & HIDEJUMPSUIT))
+			bodyparts_to_add -= "tail_blaf"
+
+
 	//Digitigrade legs are stuck in the phantom zone between true limbs and mutant bodyparts. Mainly it just needs more agressive updating than most limbs.
 	var/update_needed = FALSE
 	var/not_digitigrade = TRUE
@@ -647,6 +652,8 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 					S = GLOB.caps_list[H.dna.features["caps"]]
 				if("tail_fox")
 					S = GLOB.fox_tails_list[H.dna.features["tail_fox"]]
+				if("tail_blaf")
+					S = GLOB.blaf_tails_list[H.dna.features["tail_blaf"]]
 
 			if(!S || S.icon_state == "none")
 				continue
@@ -654,7 +661,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/mutable_appearance/accessory_overlay = mutable_appearance(S.icon, layer = -layer)
 
 			//A little rename so we don't have to use tail_lizard or tail_human when naming the sprites.
-			if(bodypart == "tail_lizard" || bodypart == "tail_human" || bodypart == "tail_fox")
+			if(bodypart == "tail_lizard" || bodypart == "tail_human" || bodypart == "tail_fox" || bodypart == "tail_blaf")
 				bodypart = "tail"
 			else if(bodypart == "waggingtail_lizard" || bodypart == "waggingtail_human")
 				bodypart = "waggingtail"

@@ -1276,6 +1276,11 @@
 	name = "Fox"
 	icon_state = "fox"
 
+/datum/sprite_accessory/tails/blaf/blaf
+	name = "Shahrubah"
+	icon_state = "blaf"
+	color_src = null
+
 /datum/sprite_accessory/snouts
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
@@ -1333,7 +1338,7 @@
 	name = "Cat"
 	icon_state = "cat"
 	hasinner = 1
-	color_src = HAIR
+	//color_src = HAIR
 
 /datum/sprite_accessory/wings/none
 	name = "None"
