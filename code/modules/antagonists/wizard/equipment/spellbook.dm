@@ -247,6 +247,12 @@
 	category = "Assistance"
 	cost = 1
 
+/datum/spellbook_entry/tap
+	name = "Soul Tap"
+	spell_type = /obj/effect/proc_holder/spell/self/tap
+	category = "Assistance"
+	cost = 3
+
 /datum/spellbook_entry/spacetime_dist
 	name = "Spacetime Distortion"
 	spell_type = /obj/effect/proc_holder/spell/spacetime_dist
@@ -557,7 +563,7 @@
 	throw_speed = 2
 	throw_range = 5
 	w_class = WEIGHT_CLASS_TINY
-	var/uses = 60
+	var/uses = 10
 	var/temp = null
 	var/tab = null
 	var/mob/living/carbon/human/owner

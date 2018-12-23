@@ -11,8 +11,8 @@
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	var/list/immune = list() // the one who creates the timestop is immune
 	var/turf/target
-	var/freezerange = 12
-	var/duration = 300
+	var/freezerange = 2
+	var/duration = 140
 	var/datum/proximity_monitor/advanced/timestop/chronofield
 	alpha = 125
 	var/check_anti_magic = FALSE
@@ -48,7 +48,7 @@
 
 /obj/effect/timestop/wizard
 	check_anti_magic = TRUE
-	duration = 300
+	duration = 100
 
 /datum/proximity_monitor/advanced/timestop
 	name = "chronofield"
@@ -133,6 +133,7 @@
 
 /datum/proximity_monitor/advanced/timestop/proc/freeze_mob(mob/living/L)
 	if(L.anti_magic_check(check_anti_magic, check_holy))
+		immune += L
 		return
 	L.Stun(20, 1, 1)
 	frozen_mobs[L] = L.anchored

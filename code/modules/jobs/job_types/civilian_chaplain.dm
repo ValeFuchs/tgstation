@@ -55,6 +55,10 @@ Chaplain
 			B.name = pick("The Holy Bible","The Dead Sea Scrolls")
 		if("satanism")
 			B.name = "The Unholy Bible"
+		if("judaism")
+			B.name = "The Torah"
+		if("floofithos")
+			B.name = "The Scrolls of Fredegar"
 		if("cthulhu")
 			B.name = "The Necronomicon"
 		if("islam")
@@ -65,8 +69,6 @@ Chaplain
 			B.name = "The Book of Lorgar"
 		if("imperium")
 			B.name = "Uplifting Primer"
-		if("floofithos")
-			B.name = "The Scrolls of Fredegar"
 		if("toolboxia")
 			B.name = "Toolbox Manifesto"
 		if("homosexuality")

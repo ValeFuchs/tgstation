@@ -18,11 +18,11 @@
 
 	var/list/stored_profiles = list() //list of datum/changelingprofile
 	var/datum/changelingprofile/first_prof = null
-	var/dna_max = 20 //How many extra DNA strands the changeling can store for transformation.
+	var/dna_max = 6 //How many extra DNA strands the changeling can store for transformation.
 	var/absorbedcount = 0
 	var/trueabsorbs = 0//dna gained using absorb, not dna sting
 	var/chem_charges = 20
-	var/chem_storage = 95
+	var/chem_storage = 75
 	var/chem_recharge_rate = 1
 	var/chem_recharge_slowdown = 0
 	var/sting_range = 2
@@ -31,7 +31,7 @@
 	var/was_absorbed = FALSE //if they were absorbed by another ling already.
 	var/isabsorbing = 0
 	var/islinking = 0
-	var/geneticpoints = 50
+	var/geneticpoints = 10
 	var/purchasedpowers = list()
 	var/mimicing = ""
 	var/canrespec = 0
@@ -240,9 +240,13 @@
 		if(verbose)
 			to_chat(user, "<span class='warning'>[target] is not compatible with our biology.</span>")
 		return
-	if((target.has_trait(TRAIT_NOCLONE)) || (target.has_trait(TRAIT_NOCLONE)))
+	if(target.has_trait(TRAIT_BADDNA))
 		if(verbose)
 			to_chat(user, "<span class='warning'>DNA of [target] is ruined beyond usability!</span>")
+		return
+	if(target.has_trait(TRAIT_HUSK))
+		if(verbose)
+			to_chat(user, "<span class='warning'>[target]'s body is ruined beyond usability!</span>")
 		return
 	if(!ishuman(target))//Absorbing monkeys is entirely possible, but it can cause issues with transforming. That's what lesser form is for anyway!
 		if(verbose)

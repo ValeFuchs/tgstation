@@ -10,7 +10,7 @@
 	symptom_delay_min = 1
 	symptom_delay_max = 1
 	var/reverse_boost = FALSE
-	threshold_desc = "<b>Transmission -10:</b> Increases the virus' growth rate while nanites are present.<br>\
+	threshold_desc = "<b>Transmission 5:</b> Increases the virus' growth rate while nanites are present.<br>\
 					  <b>Stage Speed 7:</b> Increases the replication boost."
 
 /datum/symptom/nano_boost/Start(datum/disease/advance/A)
@@ -29,7 +29,7 @@
 	if(reverse_boost && SEND_SIGNAL(M, COMSIG_HAS_NANITES))
 		if(prob(A.stage_prob))
 			A.stage = min(A.stage + 1,A.max_stages)
-
+			
 /datum/symptom/nano_destroy
 	name = "Silicolysis"
 	desc = "The virus reacts to nanites in the host's bloodstream by attacking and consuming them."
